@@ -8,9 +8,9 @@ const OnBoardScreen = ({navigation}) => {
         <StatusBar translucent backgroundColor={COLORS.transparent}/>
         <Image source = {require('../../assets/CTrackerImage1.jpg')} style={style.image} />
         <View style={style.indicatorContainer}>
-          <View style={style.indicator}/>
-          <View style={style.indicator}/>
           <View style={[style.indicator, style.indicatorActive]}/>
+          <View style={style.indicator}/>
+          <View style={style.indicator}/>
         </View>
         <View style={{paddingHorizontal:20, paddingTop:20}}>
           <View>
@@ -21,7 +21,7 @@ const OnBoardScreen = ({navigation}) => {
           <View style={style.subTitle}><Text>ipsum quia dolor sit amet</Text></View>
         </View>
         <View style={{flex:1,justifyContent:'flex-end',paddingBottom:40}}>
-          <Pressable onPress={()=> navigation.navigate("HomeScreen")}>
+          <Pressable onPress={()=> navigation.navigate("Signin")}>
           <View style={style.btn}>
             <Text style={{color:COLORS.white}}>Get Started</Text>
           </View>
