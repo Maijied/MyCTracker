@@ -1,71 +1,74 @@
-// import React from "react";
-// import { SafeAreaView, StyleSheet } from "react-native";
-// import COLORS from '../../consts/colors';
-
-// const OnBoardScreen = () => {
-//     return <SafeAreaView></SafeAreaView>
-// };
-
-// const style  = StyleSheet.create({});
-// export default OnBoardScreen;
-
-import React from 'react';
-import {
-  View,
-  StyleSheet,
-  ImageBackground,
-  StatusBar,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
-// import {Colors} from 'react-native/Libraries/NewAppScreen';
+import React from "react";
+import { SafeAreaView, StyleSheet, Image, StatusBar, View, Text, Pressable } from "react-native";
 import COLORS from '../../consts/colors';
+
 const OnBoardScreen = ({navigation}) => {
-  return (
-    <View style={{flex: 1}}>
-      <StatusBar translucent backgroundColor="rgba(0,0,0,0)" />
-      <ImageBackground
-        style={{flex: 1}}
-        source={require('../../assets/CTrackerImage1.jpg')}>
-        <View style={style.details}>
-          <Text style={{color: COLORS.white, fontSize: 35, fontWeight: 'bold'}}>
-            Discover
-          </Text>
-          <Text style={{color: COLORS.white, fontSize: 35, fontWeight: 'bold'}}>
-            world with us
-          </Text>
-          <Text style={{color: COLORS.white, lineHeight: 25, marginTop: 15}}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut
-            sem non erat vehicula dignissim. Morbi eget congue ante, feugiat.
-          </Text>
-          <TouchableOpacity
-            activeOpacity={0.8}
-            onPress={() => navigation.navigate('HomeScreen')}>
-            <View style={style.btn}>
-              <Text style={{fontWeight: 'bold'}}>Get Started</Text>
-            </View>
-          </TouchableOpacity>
+    return <SafeAreaView
+      style={{flex:1, backgroundColor: COLORS.white}}>
+        <StatusBar translucent backgroundColor={COLORS.transparent}/>
+        <Image source = {require('../../assets/CTrackerImage1.jpg')} style={style.image} />
+        <View style={style.indicatorContainer}>
+          <View style={style.indicator}/>
+          <View style={style.indicator}/>
+          <View style={[style.indicator, style.indicatorActive]}/>
         </View>
-      </ImageBackground>
-    </View>
-  );
+        <View style={{paddingHorizontal:20, paddingTop:20}}>
+          <View>
+            <Text style={style.title}>Secure Your</Text>
+            <Text style={style.title}>Sweet Home</Text>
+          </View>
+          <View style={style.subTitle}><Text>Neque porro quisquam est qui dolorem </Text></View>
+          <View style={style.subTitle}><Text>ipsum quia dolor sit amet</Text></View>
+        </View>
+        <View style={{flex:1,justifyContent:'flex-end',paddingBottom:40}}>
+          <Pressable onPress={()=> navigation.navigate("HomeScreen")}>
+          <View style={style.btn}>
+            <Text style={{color:COLORS.white}}>Get Started</Text>
+          </View>
+          </Pressable>
+        </View>
+      </SafeAreaView>
 };
 
-const style = StyleSheet.create({
-  details: {
-    height: '50%',
-    bottom: 0,
-    position: 'absolute',
-    paddingHorizontal: 40,
+const style  = StyleSheet.create({
+  image:{
+    height:420,
+    width:'100%',
+    borderBottomLeftRadius:100,
   },
-  btn: {
-    height: 50,
-    width: 120,
-    backgroundColor: COLORS.blue,
-    marginTop: 20,
-    borderRadius: 7,
-    justifyContent: 'center',
-    alignItems: 'center',
+  indicatorContainer:{
+    height: 20,
+    flexDirection: 'row',
+    justifyContent:'center',
+    alignItems:'center',
   },
+  indicator:{
+    height:3,
+    width:30,
+    backgroundColor: COLORS.grey,
+    marginHorizontal:5,
+    borderRadius:5,
+  },
+  indicatorActive:{
+    backgroundColor:COLORS.dark,
+  },
+  title:{
+    fontSize:32,
+    fontWeight: 'bold',
+    color:'black',
+  },
+  subTitle:{
+    fontSize:16,
+    color: COLORS.grey,
+  },
+  btn:{
+    height:60,
+    marginHorizontal:20,
+    backgroundColor:COLORS.dark,
+    borderRadius:15,
+    justifyContent:'center',
+    alignItems:'center',
+  }
 });
 export default OnBoardScreen;
+
