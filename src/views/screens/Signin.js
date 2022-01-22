@@ -86,6 +86,7 @@ const style  = StyleSheet.create({
       backgroundColor:COLORS.light,
       flex:1,
       borderRadius:10,
+      paddingLeft:10,
     },
     passwordInput:{
       height:40,
@@ -93,6 +94,7 @@ const style  = StyleSheet.create({
       flex:1,
       borderRadius:10,
       marginTop:15,
+      paddingLeft:10,
     },
   });
 export default Signin;
