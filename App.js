@@ -6,6 +6,8 @@ import OnBoardScreen from './src/views/screens/OnBoardScreen';
 import HomeScreen from './src/views/screens/HomeScreen';
 import DetailsScreen from './src/views/screens/DetailsScreen';
 import Signin from './src/views/screens/Signin';
+import LiveVideos from './src/views/screens/LiveVideos';
+import RecordedVideos from './src/views/screens/RecordedVideos';
 const Stack = createStackNavigator();
 
 const App = () => {
@@ -16,6 +18,8 @@ const App = () => {
         <Stack.Screen name="Signin" component={Signin} />
         <Stack.Screen name="HomeScreen" component={HomeScreen} />
         <Stack.Screen name="DetailsScreen" component={DetailsScreen} />
+        <Stack.Screen name="LiveVideos" component={LiveVideos} />
+        <Stack.Screen name="RecordedVideos" component={RecordedVideos} />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -23,4 +23,30 @@ const cameras = [
         require('../assets/CTrackerImage8.jpg'),
     ],
    },
-]
+   {
+    id: '3',
+    title: 'Special guests suite',
+    location: 'Down town house suit Khilket',
+    image: require('../assets/CTrackerImage6.jpg'),
+    details: 'This building is located in the Niketon Area',
+    interiorsCam: [
+        require('../assets/CTrackerImage6.jpg'),
+        require('../assets/CTrackerImage7.jpg'),
+        require('../assets/CTrackerImage8.jpg'),
+    ],
+   },
+   {
+    id: '4',
+    title: 'Bedroom suite',
+    location: 'Down town house suit Khilket',
+    image: require('../assets/CTrackerImage6.jpg'),
+    details: 'This building is located in the Niketon Area',
+    interiorsCam: [
+        require('../assets/CTrackerImage6.jpg'),
+        require('../assets/CTrackerImage7.jpg'),
+        require('../assets/CTrackerImage8.jpg'),
+    ],
+   },
+];
+
+export default cameras;
