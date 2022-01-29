@@ -13,6 +13,9 @@ const RecordedVideos = ({navigation}) => {
                 backgroundColor={COLORS.white}
                 barStyle="dark-content"
             />
+             <View>
+                <Text>Recorded Videos</Text>
+            </View>
         </SafeAreaView>
     );
 };

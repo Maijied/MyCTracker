@@ -204,15 +204,12 @@ const HomeScreen = ({navigation}) => {
       <View style={style.optionListsContainer}>
         {optionsList.map((option, index) => (
           <View style={style.optionsCard} key={index}>
-            {/* House image */}
             <Image source={option.img} style={style.optionsCardImage} />
-
-            {/* Option title */}
-            {/* <Pressable onPress={()=> navigation.navigate("DetailsScreen")}> */}
+            <Pressable onPress={()=> navigation.navigate("LiveVideos")}>
                 <Text style={{marginTop: 10, fontSize: 18, fontWeight: 'bold'}}>
                 {option.title}
                 </Text>
-            {/* </Pressable> */}
+           </Pressable>
           </View>
         ))}
       </View>
@@ -302,10 +299,11 @@ const HomeScreen = ({navigation}) => {
             <Icon name="search" color={COLORS.grey} size={25} />
             <TextInput placeholder="Search address, city, location" />
           </View>
-
-          <View style={style.sortBtn}>
-            <Icon name="tune" color={COLORS.white} size={25} />
-          </View>
+          <Pressable onPress={()=> navigation.navigate("RecordedVideos")}>
+            <View style={style.sortBtn}>
+              <Icon name="tune" color={COLORS.white} size={25} />
+            </View>
+          </Pressable>
         </View>
 
         {/* Render list options */}
